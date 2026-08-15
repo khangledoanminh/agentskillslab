@@ -112,7 +112,7 @@ Copy any skill folder into your agent's skill directory and it just works — no
 
 ## Contributing
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md). One deep skill beats ten shallow ones. PRs without tests are not merged.
+Read [CONTRIBUTING.md](CONTRIBUTING.md). One deep skill beats ten shallow ones. PRs without tests are not merged
 
 ---
 
