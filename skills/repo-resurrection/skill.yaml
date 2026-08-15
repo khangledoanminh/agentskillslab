@@ -1,0 +1,19 @@
+format_version: "1.0"
+version: "1.0.0"
+title: Repo Resurrection
+description: "Revive an abandoned repository: audit its state, restore the build environment, fix broken dependencies and tests, modernize code and tooling, generate documentation, and produce a migration plan to bring the project back to life. Use when inheriting a dead or broken project that needs to become buildable, testable, and maintainable again."
+license: MIT
+maintainer: "ASL Team <team@agentskillslab.dev>"
+compatibility:
+  agents: [claude-code, codex, cursor, github-copilot, opencode, kilo]
+  requires:
+    - python: ">=3.10"
+permissions:
+  filesystem: local
+  network: none
+  downloads: false
+  install_packages: false
+  subprocess: safe
+  max_runtime_seconds: 300
+determinism: partial
+tags: ['legacy', 'maintenance', 'modernization', 'migration']

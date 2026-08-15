@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-08-15T09:20:11Z",
+  "runs_per_benchmark": 3,
+  "python": "3.12.3",
+  "benchmarks": [
+    {
+      "label": "security-auditor/bench_audit",
+      "median_ms": 106.93,
+      "min_ms": 106.5,
+      "max_ms": 107.3,
+      "out": "{'wall_ms': 69.89, 'files_scanned': 3, 'findings': 5, 'scan_seconds': 0.03}"
+    },
+    {
+      "label": "platform/validate-10-skills (1 loop)",
+      "median_ms": 2013.79
+    },
+    {
+      "label": "platform/scan-vulnerable-sample (3 loop)",
+      "median_ms": 9.74
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://agentskillslab.dev/spec/schema-v1.0.json",
+  "title": "AgentSkillsLab Skill Manifest (skill.yaml) v1.0",
+  "description": "JSON Schema cho skill.yaml của AgentSkillsLab Skill Specification v1.0",
+  "type": "object",
+  "required": ["format_version", "version", "title", "license", "permissions"],
+  "additionalProperties": false,
+  "properties": {
+    "format_version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Phiên bản spec. Validator từ chối mọi giá trị không nhận dạng được."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
+      "description": "Semver của skill."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 2000
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX identifier, ví dụ MIT, Apache-2.0, BSD-3-Clause"
+    },
+    "maintainer": {
+      "type": "string"
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "agents": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "claude-code",
+              "codex",
+              "cursor",
+              "github-copilot",
+              "opencode",
+              "kilo",
+              "cline",
+              "aider",
+              "vscode-agent",
+              "manus"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "requires": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "oneOf": [
+              {
+                "required": ["python"],
+                "additionalProperties": false,
+                "properties": {
+                  "python": {"type": "string"}
+                }
+              },
+              {
+                "required": ["command"],
+                "additionalProperties": false,
+                "properties": {
+                  "command": {"type": "string"},
+                  "optional": {"type": "boolean"}
+                }
+              },
+              {
+                "required": ["tool"],
+                "additionalProperties": false,
+                "properties": {
+                  "tool": {"type": "string"}
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "required": ["filesystem", "network", "downloads", "install_packages", "subprocess"],
+      "additionalProperties": false,
+      "properties": {
+        "filesystem": {
+          "type": "string",
+          "enum": ["local", "read-only", "none"]
+        },
+        "network": {
+          "type": "string",
+          "enum": ["none", "outbound-only"]
+        },
+        "downloads": {"type": "boolean"},
+        "install_packages": {"type": "boolean"},
+        "subprocess": {
+          "type": "string",
+          "enum": ["safe", "none"]
+        },
+        "max_runtime_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 86400
+        }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "python": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "system": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "node": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "determinism": {
+      "type": "string",
+      "enum": ["full", "partial", "ai-guided"]
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "requires_skills": {
+      "type": "array",
+      "description": "Skill khác mà skill này phụ thuộc (chỉ cảnh báo, không tự cài)",
+      "items": {"type": "string"}
+    }
+  }
+}

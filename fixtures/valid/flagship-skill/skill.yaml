@@ -1,0 +1,18 @@
+format_version: "1.0"
+version: "2.1.0"
+title: Flagship Skill
+license: Apache-2.0
+maintainer: "ASL Team <team@agentskillslab.dev>"
+compatibility:
+  agents: [claude-code, codex, cursor, github-copilot, opencode, kilo]
+  requires:
+    - python: ">=3.10"
+permissions:
+  filesystem: local
+  network: none
+  downloads: false
+  install_packages: false
+  subprocess: safe
+  max_runtime_seconds: 120
+determinism: full
+tags: [flagship, demo]

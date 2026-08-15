@@ -1,0 +1,19 @@
+format_version: "1.0"
+version: "1.0.0"
+title: Release Engineer
+description: "Prepare and validate a release: check changelog completeness, version bump consistency, build artifacts, license compliance, and release checklist items, producing a validated release manifest. Use when cutting a new version, preparing packages for distribution, or auditing release readiness."
+license: MIT
+maintainer: "ASL Team <team@agentskillslab.dev>"
+compatibility:
+  agents: [claude-code, codex, cursor, github-copilot, opencode, kilo]
+  requires:
+    - python: ">=3.10"
+permissions:
+  filesystem: local
+  network: none
+  downloads: false
+  install_packages: false
+  subprocess: safe
+  max_runtime_seconds: 300
+determinism: full
+tags: ['release', 'ci-cd', 'packaging', 'versioning']

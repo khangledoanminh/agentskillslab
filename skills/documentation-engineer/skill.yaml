@@ -1,0 +1,19 @@
+format_version: "1.0"
+version: "1.0.0"
+title: Documentation Engineer
+description: "Assess and repair documentation quality with measurable checks: missing docstrings, undocumented public APIs, dead links, stale examples, and readability scoring, then generate documentation that matches the current code exactly. Use when docs are missing, outdated, or an onboarding guide is needed."
+license: MIT
+maintainer: "ASL Team <team@agentskillslab.dev>"
+compatibility:
+  agents: [claude-code, codex, cursor, github-copilot, opencode, kilo]
+  requires:
+    - python: ">=3.10"
+permissions:
+  filesystem: local
+  network: none
+  downloads: false
+  install_packages: false
+  subprocess: safe
+  max_runtime_seconds: 300
+determinism: partial
+tags: ['documentation', 'onboarding', 'api-docs', 'quality']

@@ -1,0 +1,10 @@
+format_version: "1.0"
+version: "1.0.0"
+title: X
+license: MIT
+permissions:
+  filesystem: local
+  network: outbound-only
+  downloads: true
+  install_packages: false
+  subprocess: safe

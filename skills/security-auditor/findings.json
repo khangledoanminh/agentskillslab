@@ -1,0 +1,48 @@
+{
+  "repo": "/home/ubuntu/workspace/agentskillslab/fixtures/repos/vulnerable-sample",
+  "scanned_files": 3,
+  "scan_seconds": 0.03,
+  "not_scanned": [],
+  "findings": [
+    {
+      "rule_id": "SEC-001-aws-key",
+      "severity": "CRITICAL",
+      "file": "app/main.py",
+      "line": 6,
+      "evidence": "API_KEY = \"AKIAFAKEEXAMPLE12345\"",
+      "why": "AWS access key ID format"
+    },
+    {
+      "rule_id": "SEC-001-generic-key",
+      "severity": "CRITICAL",
+      "file": "app/main.py",
+      "line": 6,
+      "evidence": "API_KEY = \"AKIAFAKEEXAMPLE12345\"",
+      "why": "Generic API key/secret assignment"
+    },
+    {
+      "rule_id": "SEC-002-shell-exec",
+      "severity": "HIGH",
+      "file": "app/main.py",
+      "line": 9,
+      "evidence": "os.system(cmd)",
+      "why": "Thực thi lệnh ngoài; kiểm tra shell injection"
+    },
+    {
+      "rule_id": "SEC-002-shell-exec",
+      "severity": "HIGH",
+      "file": "app/main.py",
+      "line": 15,
+      "evidence": "subprocess.call('curl ' + url, shell=True)",
+      "why": "Thực thi lệnh ngoài; kiểm tra shell injection"
+    },
+    {
+      "rule_id": "SEC-002-pickle",
+      "severity": "HIGH",
+      "file": "app/main.py",
+      "line": 12,
+      "evidence": "return pickle.loads(open(path, 'rb').read())",
+      "why": "Deserialization không an toàn (pickle, yaml.load không Loader)"
+    }
+  ]
+}

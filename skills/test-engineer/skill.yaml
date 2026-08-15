@@ -1,0 +1,19 @@
+format_version: "1.0"
+version: "1.0.0"
+title: Test Engineer
+description: "Coverage-driven test engineering: analyze code, find uncovered paths, generate tests targeting them, run, measure coverage, mutate to verify test strength, and iterate until quality targets are met. Use when asked to write tests, improve test coverage, or verify that existing tests actually catch bugs."
+license: MIT
+maintainer: "ASL Team <team@agentskillslab.dev>"
+compatibility:
+  agents: [claude-code, codex, cursor, github-copilot, opencode, kilo]
+  requires:
+    - python: ">=3.10"
+permissions:
+  filesystem: local
+  network: none
+  downloads: false
+  install_packages: false
+  subprocess: safe
+  max_runtime_seconds: 300
+determinism: partial
+tags: ['testing', 'coverage', 'mutation', 'quality']

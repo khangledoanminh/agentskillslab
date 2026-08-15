@@ -1,0 +1,19 @@
+format_version: "1.0"
+version: "1.0.0"
+title: Codebase Architect
+description: "Analyze a repository's architecture and produce an evidence-based architecture report: module map, dependency graph, coupling metrics, circular dependencies, and hotspot identification, with Mermaid diagrams generated from real import relationships. Use when onboarding to a new codebase, planning major changes, or documenting system structure."
+license: MIT
+maintainer: "ASL Team <team@agentskillslab.dev>"
+compatibility:
+  agents: [claude-code, codex, cursor, github-copilot, opencode, kilo]
+  requires:
+    - python: ">=3.10"
+permissions:
+  filesystem: local
+  network: none
+  downloads: false
+  install_packages: false
+  subprocess: safe
+  max_runtime_seconds: 300
+determinism: full
+tags: ['architecture', 'analysis', 'visualization', 'documentation']

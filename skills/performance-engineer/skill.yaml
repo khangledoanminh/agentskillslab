@@ -1,0 +1,19 @@
+format_version: "1.0"
+version: "1.0.0"
+title: Performance Engineer
+description: "Evidence-based performance optimization: benchmark the real code before and after changes, profile to find the true bottleneck, patch, and verify improvement with statistical rigor. Use when code is slow, latency needs reducing, or optimization claims must be proven."
+license: MIT
+maintainer: "ASL Team <team@agentskillslab.dev>"
+compatibility:
+  agents: [claude-code, codex, cursor, github-copilot, opencode, kilo]
+  requires:
+    - python: ">=3.10"
+permissions:
+  filesystem: local
+  network: none
+  downloads: false
+  install_packages: false
+  subprocess: safe
+  max_runtime_seconds: 300
+determinism: partial
+tags: ['performance', 'profiling', 'optimization', 'benchmarking']

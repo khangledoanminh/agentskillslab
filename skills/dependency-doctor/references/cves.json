@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "curated_at": "2026-08",
+    "scope": "CVE phổ biến của package major thường gặp trong Python/Node",
+    "limitations": "Không phải database đầy đủ; CVE mới trong 30 ngày có thể thiếu; xem CVE-LIMITATIONS.md",
+    "source": "curated từ NVD/CVE public advisories"
+  },
+  "vulnerable": [
+    {"cve": "CVE-2023-30861", "package": "flask", "fixed_in": "2.3.2", "description": "session cookie leak qua Vary header khi có multiple subdomains"},
+    {"cve": "CVE-2023-32681", "package": "requests", "fixed_in": "2.31.0", "description": "Proxy-Authorization header leak qua redirect HTTP-to-HTTPS"},
+    {"cve": "CVE-2024-34069", "package": "requests", "fixed_in": "2.32.0", "description": "info leak qua Proxy-Authorization header khi redirect cross-origin"},
+    {"cve": "CVE-2021-33503", "package": "urllib3", "fixed_in": "1.26.5", "description": "ReDoS qua URL parsing với userinfo dài"},
+    {"cve": "CVE-2023-45803", "package": "urllib3", "fixed_in": "1.26.18", "description": "request body leak khi redirect cross-origin"},
+    {"cve": "CVE-2023-43804", "package": "urllib3", "fixed_in": "1.26.17", "description": "Cookie header leak qua redirect"},
+    {"cve": "CVE-2021-28363", "package": "requests", "fixed_in": "2.25.1", "description": "certificate verify bypass qua SubjectAltName"},
+    {"cve": "CVE-2022-23491", "package": "werkzeug", "fixed_in": "2.0.3", "description": "multipart parser resource exhaustion"},
+    {"cve": "CVE-2024-22195", "package": "jinja2", "fixed_in": "3.1.3", "description": "XSS qua urlize filter với input crafted"},
+    {"cve": "CVE-2023-37920", "package": "certifi", "fixed_in": "2023.7.22", "description": "e-Tugra root certificate bị revoke — MITM risk"},
+    {"cve": "CVE-2023-49083", "package": "cryptography", "fixed_in": "41.0.6", "description": "NULL pointer crash khi parse certificate crafted"},
+    {"cve": "CVE-2023-50447", "package": "pillow", "fixed_in": "10.2.0", "description": "DoS qua ImtImageFile parse file crafted"},
+    {"cve": "CVE-2022-40897", "package": "setuptools", "fixed_in": "65.5.1", "description": "ReDoS qua package_url parsing"},
+    {"cve": "CVE-2024-28849", "package": "django", "fixed_in": "5.0.3", "description": "DoS qua EmailValidator regex"},
+    {"cve": "CVE-2024-35195", "package": "requests", "fixed_in": "2.32.0", "description": "certificate verify bypass khi verify=False chuyển qua session"},
+    {"cve": "GHSA-jfh8-c2jp-5v3q", "package": "lodash", "fixed_in": "4.17.21", "description": "prototype pollution qua template function"},
+    {"cve": "GHSA-x5rq-j2xg-h7qm", "package": "express", "fixed_in": "4.19.2", "description": "open redirect qua location header crafted"},
+    {"cve": "GHSA-9wv6-86v2-598j", "package": "react", "fixed_in": "18.0.0", "description": "XSS qua dangerouslySetInnerHTML pattern misuse"},
+    {"cve": "CVE-2024-21503", "package": "pytest", "fixed_in": "8.1.0", "description": "info leak qua error message path disclosure"}
+  ]
+}

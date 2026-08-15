@@ -1,0 +1,47 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: sudo pip3 install pyyaml ruff
+
+      - name: Lint (ruff)
+        run: ruff check .
+
+      - name: Run test suite (platform + skills)
+        run: |
+          python3 tests/test_lib.py
+          for skill in skills/*/; do
+            name=$(basename "$skill")
+            for t in "$skill"tests/*.py; do
+              [ -f "$t" ] && PYTHONPATH=. python3 "$t" || true
+            done
+          done
+
+      - name: Validate all skills
+        run: |
+          for skill in skills/*/; do
+            PYTHONPATH=. python3 cli/agent_skills.py validate "$skill"
+          done
+
+      - name: Check fixtures (malformed phải fail, valid phải pass)
+        run: |
+          for s in fixtures/valid/*/; do
+            PYTHONPATH=. python3 cli/agent_skills.py validate "$s" || exit 1
+          done
+          for s in fixtures/malformed/*/; do
+            PYTHONPATH=. python3 cli/agent_skills.py validate "$s" && exit 1 || true
+          done

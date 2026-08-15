@@ -1,0 +1,2 @@
+AWS_KEY = 'AKIAFAKE1234567890AB'
+print('ok')

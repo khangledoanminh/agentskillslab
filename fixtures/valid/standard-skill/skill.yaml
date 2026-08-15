@@ -1,0 +1,19 @@
+format_version: "1.0"
+version: "1.0.0"
+title: Standard Skill
+description: A complete reference skill fixture for validation testing.
+license: MIT
+maintainer: "ASL Team <team@agentskillslab.dev>"
+compatibility:
+  agents: [claude-code, codex, cursor, github-copilot, opencode, kilo]
+  requires:
+    - python: ">=3.10"
+permissions:
+  filesystem: local
+  network: none
+  downloads: false
+  install_packages: false
+  subprocess: safe
+  max_runtime_seconds: 60
+determinism: full
+tags: [example, fixture]

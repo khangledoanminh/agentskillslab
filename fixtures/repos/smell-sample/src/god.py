@@ -1,0 +1,19 @@
+class GodClass:
+    def method_0(self): return 0
+    def method_1(self): return 1
+    def method_2(self): return 2
+    def method_3(self): return 3
+    def method_4(self): return 4
+    def method_5(self): return 5
+    def method_6(self): return 6
+    def method_7(self): return 7
+    def method_8(self): return 8
+    def method_9(self): return 9
+    def method_10(self): return 10
+    def method_11(self): return 11
+    def method_12(self): return 12
+    def method_13(self): return 13
+    def method_14(self): return 14
+    def method_15(self): return 15
+    def method_16(self): return 16
+    def method_17(self): return 17

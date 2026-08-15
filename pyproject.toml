@@ -1,0 +1,29 @@
+[project]
+name = "agentskillslab"
+version = "1.0.0"
+description = "Production-grade skills for coding agents — 10 flagship skills shipped as self-contained tools with scripts, tests, benchmarks and security rules"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "AgentSkillsLab"}]
+keywords = ["agent-skills", "ai-coding", "claude-code", "codex", "cursor"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development",
+]
+
+[project.scripts]
+agent-skills = "cli.agent_skills:main"
+
+[tool.ruff]
+line-length = 130
+exclude = ["fixtures/malformed/**", "fixtures/malicious/**"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+
+[tool.ruff.lint.per-file-ignores]
+"fixtures/**" = ["E501", "F401", "F841", "E401", "W291"]  # deliberate test fixtures
+"scripts/**" = ["E501"]  # dev generators — long string literals cố ý
+

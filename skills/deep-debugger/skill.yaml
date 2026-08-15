@@ -1,0 +1,19 @@
+format_version: "1.0"
+version: "1.0.0"
+title: Deep Debugger
+description: "Root-cause debugging workflow: reconstruct error context, build hypotheses, test each hypothesis against evidence, and prove the root cause with a reproducer. Use when debugging a failing test, crash, or confusing error message and you need to find the actual root cause rather than guess fixes."
+license: MIT
+maintainer: "ASL Team <team@agentskillslab.dev>"
+compatibility:
+  agents: [claude-code, codex, cursor, github-copilot, opencode, kilo]
+  requires:
+    - python: ">=3.10"
+permissions:
+  filesystem: local
+  network: none
+  downloads: false
+  install_packages: false
+  subprocess: safe
+  max_runtime_seconds: 300
+determinism: partial
+tags: ['debugging', 'root-cause', 'troubleshooting']

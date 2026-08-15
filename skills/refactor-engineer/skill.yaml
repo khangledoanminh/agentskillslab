@@ -1,0 +1,19 @@
+format_version: "1.0"
+version: "1.0.0"
+title: Refactor Engineer
+description: Detect code smells (God class, long functions, duplication, circular dependencies, bad abstractions) with real static analysis, refactor safely with regression tests as guardrails, and verify no behavior change. Use when improving code structure, reducing technical debt, or preparing legacy code for extension.
+license: MIT
+maintainer: "ASL Team <team@agentskillslab.dev>"
+compatibility:
+  agents: [claude-code, codex, cursor, github-copilot, opencode, kilo]
+  requires:
+    - python: ">=3.10"
+permissions:
+  filesystem: local
+  network: none
+  downloads: false
+  install_packages: false
+  subprocess: safe
+  max_runtime_seconds: 300
+determinism: partial
+tags: ['refactoring', 'code-quality', 'technical-debt', 'design']

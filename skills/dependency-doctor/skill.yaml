@@ -1,0 +1,19 @@
+format_version: "1.0"
+version: "1.0.0"
+title: Dependency Doctor
+description: "Diagnose dependency health across package managers (npm/pip/cargo/go): outdated packages, known vulnerabilities, unused dependencies, version conflicts, and license compliance issues, then produce a prioritized remediation plan. Use when managing, upgrading, or auditing project dependencies."
+license: MIT
+maintainer: "ASL Team <team@agentskillslab.dev>"
+compatibility:
+  agents: [claude-code, codex, cursor, github-copilot, opencode, kilo]
+  requires:
+    - python: ">=3.10"
+permissions:
+  filesystem: local
+  network: none
+  downloads: false
+  install_packages: false
+  subprocess: safe
+  max_runtime_seconds: 300
+determinism: full
+tags: ['dependencies', 'supply-chain', 'security', 'maintenance']
